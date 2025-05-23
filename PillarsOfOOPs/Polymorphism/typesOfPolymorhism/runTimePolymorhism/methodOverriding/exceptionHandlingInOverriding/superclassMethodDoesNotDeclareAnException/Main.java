@@ -1,13 +1,13 @@
 // Java program to demonstrate overriding when
 // superclass method does not declare an exception
 
-class Parent {
+class ParentClass {
     void m1() { System.out.println("From parent m1()"); }
 
     void m2() { System.out.println("From parent  m2()"); }
 }
 
-class Child extends Parent {
+class Child extends ParentClass {
     @Override
     // no issue while throwing unchecked exception
     void m1() throws ArithmeticException
@@ -21,5 +21,13 @@ class Child extends Parent {
     void m2() throws Exception
     {
         System.out.println("From child m2");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        ParentClass obj = new Child();
+        obj.m1();
+        obj.m2(); // Call m2 to use the method
     }
 }

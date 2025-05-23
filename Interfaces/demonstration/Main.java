@@ -1,0 +1,30 @@
+interface testInterface {
+  
+    // public, static and final
+    final int A = 10;
+
+    // public and abstract
+    void display();
+}
+
+// Class implementing interface
+class TestClass implements testInterface {
+  
+    // Implementing the capabilities of
+    // Interface
+    @Override
+    public void display(){ 
+      System.out.println("Geek"); 
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        TestClass t = new TestClass();
+        t.display();
+        System.out.println(testInterface.A);
+    }
+
+}
